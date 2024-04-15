@@ -16,7 +16,7 @@ db.init_app(app)
 
 @app.route('/')
 def index():
-    return '<h1>Bakery GET API</h1>'
+    return '<h1>Bakery GET AP</h1>'
 
 @app.route('/bakeries')
 def bakeries():
@@ -43,6 +43,5 @@ def most_expensive_baked_good():
     most_expensive = BakedGood.query.order_by(BakedGood.price.desc()).limit(1).first()
     most_expensive_serialized = most_expensive.to_dict()
     return make_response( most_expensive_serialized,   200  )
-
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
